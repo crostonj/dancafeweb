@@ -19,15 +19,17 @@ export class ProductAService {
   };
 
   constructor(private http: HttpClient) {
-      this.ProductUrl = 'https://virtserver.swaggerhub.com/crostonj/Product/1.0.0/inventory';
+      this.ProductUrl = 'http://localhost:3000/Products';
   }
 
   getProducts(): Observable<InventoryItem[]> {
     return this.http.get<InventoryItem[]>(this.ProductUrl, this.httpOptions);
   }
 
-  getProductDetails(id: number): Observable<InventoryItem>{
-    return this.http.get<InventoryItem>(this.ProductUrl, this.httpOptions)
+  getProductDetails(id: string): Observable<InventoryItem>{
+    const url = this.ProductUrl + '?searchString=' + id;
+    console.log(url);
+    return this.http.get<InventoryItem>(url, this.httpOptions);
   }
 
   private handleError(error: HttpErrorResponse) {

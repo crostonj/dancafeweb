@@ -5,11 +5,16 @@
     <th>Name</th>
     <th>manufacturer</th>
     <th>Release Date</th>
+    <th>Detail</th>
   </tr>
   <tr *ngFor="let product of products">
     <td>{{ product.id }}</td>
     <td>{{ product.name }}</td>
-    <td>{{ product.manufacturer.name }}</td>
-    <td>{{ product.releaseDate }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.price }}</td>
+    <td> <a [routerLink]="['/ProductDetails', product.id]">View</a></td>
+
   </tr>
 </table>
+
+<router-outlet></router-outlet>

@@ -11,6 +11,7 @@ export class ProductListComponent implements OnInit {
 
   private productService: ProductAService;
   products: InventoryItem[];
+  productID: number;
 
   constructor(productService: ProductAService) {
     this.productService = productService;

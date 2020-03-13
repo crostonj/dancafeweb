@@ -9,12 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-import { Manufacturer } from './manufacturer';
-
-
 export interface InventoryItem {
     id: string;
     name: string;
-    releaseDate: Date;
-    manufacturer: Manufacturer;
+    description: string;
+    price: string;
 }
+
